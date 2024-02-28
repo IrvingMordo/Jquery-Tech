@@ -1,0 +1,33 @@
+<!-- edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <title>Editar</title>
+</head>
+
+<body>
+  <div data-role="page">
+    <div data-role="content">
+      <h2>Editar Producto</h2>
+      <form action="/api/edit/<%= product.id %>" method="POST">
+        <input type="text" name="description" id="txt_description" value="<%= product.description %>" placeholder="Descripción">
+        <input type="text" name="brand" id="txt_brand" value="<%= product.brand %>" placeholder="Marca">
+        <input type="text" name="color" id="txt_color" value="<%= product.color %>" placeholder="Color">
+        <input type="text" name="size" id="txt_size" value="<%= product.size %>" placeholder="Tamaño">
+        <input type="text" name="affair" id="txt_affair" value="<%= product.affair %>" placeholder="Asunto">
+        <input type="text" name="status" id="txt_status" value="<%= product.status %>" placeholder="Estatus">
+        <button type="submit" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar Cambios</button>
+      </form>
+      <a href="/api" class="ui-btn ui-btn-icon-left ui-icon-back" data-ajax="false">Volver</a>
+    </div>
+  </div>
+</body>
+
+</html>
