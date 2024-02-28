@@ -14,10 +14,10 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev'));
-app.use('/api', router);
+app.use('/', router);
 
 // Ruta principal para renderizar la vista
-app.get('/', async (req, res) => {
+app.get('/api', async (req, res) => {
     try {
         const products = await SmartDAO.getAll();
         console.log('Productos:', products);
